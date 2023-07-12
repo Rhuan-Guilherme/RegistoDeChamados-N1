@@ -13,10 +13,10 @@ onMounted(() => {
 
 <template>
   <TheHeader />
-  <main class="conteudo_main bg-slate-100 dark:bg-gray-950">
+  <main class="conteudo_main bg-slate-200 dark:bg-gray-950 pt-[73px]">
     <RouterView />
   </main>
-  <footer class="bg-slate-100 dark:bg-gray-950 p-1">
+  <footer class="bg-slate-200 dark:bg-gray-950 p-1">
     <TheFooter />
   </footer>
 </template>

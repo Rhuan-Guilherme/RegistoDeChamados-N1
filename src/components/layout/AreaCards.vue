@@ -3,12 +3,6 @@ import { ref } from 'vue'
 import { useRegistrosStore } from '@/stores/registros'
 const chamados = useRegistrosStore()
 
-const isActive = ref()
-
-function ativaConcluido(){
-    this.isActive = ref(true)
-}
-
 </script>
 
 <template>

@@ -1,5 +1,4 @@
 <script setup>
-import  {useCounterStore}  from '@/stores/counter'
 import CustonInput from '@/components/CustomInput.vue'
 import { ref } from 'vue'
 import { useRegistrosStore } from '@/stores/registros'

@@ -7,12 +7,24 @@ const chamados = useRegistrosStore()
 
 
 const nome = ref()
-const login = ref('')
-const ramal = ref('')
-const patrimonio = ref('')
-const local = ref('')
-const informacao = ref('')
-const checkTipo = ref('')
+const login = ref()
+const ramal = ref()
+const patrimonio = ref()
+const local = ref()
+const informacao = ref()
+const checkTipo = ref()
+const selected = ref()
+
+function reset(){
+    this.nome = null
+    this.login = null
+    this.ramal = null
+    this.patrimonio = null
+    this.local = null
+    this.informacao = null
+    this.checkTipo = null
+    this.selected = null
+}
 
 
 </script>
@@ -83,12 +95,13 @@ const checkTipo = ref('')
             <div class="flex w-full">
 
                 <select id="countries"
+                    v-model="selected"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option selected>Local pré definido</option>
-                    <option value="CL">Gabinete Min. Cármem Lúcia</option>
+                    <option selected value="local">Local pré definido</option>
+                    <option value="Anexo 2A / 6° andar / Gabinete ministra Cármen Lúcia">Gabinete Min. Cármem Lúcia</option>
                     <option value="DT">Gabinete Min. Dias Toffoli</option>
                     <option value="CZ">Gabinete Min. Cristiano Zanin</option>
-                    <option value="AM">Gabinete Min. André Mendonça</option>
+                    <option value="Anexo 2A / 5° andar / Gabinete Ministro André Mendonça">Gabinete Min. André Mendonça</option>
                 </select>
             </div>
         </div>
@@ -120,7 +133,7 @@ const checkTipo = ref('')
         </div>
 
         <div>
-            <button @click="chamados.addChamado(nome, login, ramal, patrimonio, informacao,  local, checkTipo) "  type="submit" class="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm w-full sm:w-auto  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "><input class="px-9 py-2.5 cursor-pointer" type="reset" value="Registrar"></button>
+            <button @click="chamados.addChamado(nome, login, ramal, patrimonio, informacao,  local, checkTipo, selected), reset() "  type="submit" class="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm w-full sm:w-auto  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "><input class="px-9 py-2.5 cursor-pointer" type="reset" value="Registrar"></button>
             
         </div>
     </form>

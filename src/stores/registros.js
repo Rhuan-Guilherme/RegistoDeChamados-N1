@@ -6,8 +6,7 @@ export const useRegistrosStore = defineStore('registros', () => {
        
     ])
 
-
-    function addChamado(nome, login, ramal, patrimonio, informacao, localRegistrado, checkTipo){
+    function addChamado(nome, login, ramal, patrimonio, informacao, localRegistrado, checkTipo, selected){
         return register.value.push({
             nome: nome,
             login: login,
@@ -15,7 +14,8 @@ export const useRegistrosStore = defineStore('registros', () => {
             patrimonio: patrimonio,
             informacao: informacao,
             local: localRegistrado,
-            checkTipo: checkTipo
+            checkTipo: checkTipo,
+            selected: selected
         })
     }
 

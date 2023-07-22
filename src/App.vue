@@ -16,10 +16,7 @@ onMounted(() => {
 <template>
   <TheHeader />
   <main class="conteudo_main bg-slate-200 dark:bg-gray-950 pt-[73px]">
-    <TheForm />
-    <section class="mx-4">
-        <AreaCards />
-    </section>
+    <RouterView></RouterView>
   </main>
   <footer class="bg-slate-200 dark:bg-gray-950 p-1">
     <TheFooter />

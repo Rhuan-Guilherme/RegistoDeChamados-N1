@@ -99,10 +99,15 @@ const reset = () =>{
                     :value="selected" @input="selected = $event.target.value"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected value="local">Local pré definido</option>
-                    <option value="Anexo 2A / 6° andar / Gabinete ministra Cármen Lúcia">Gabinete Min. Cármem Lúcia</option>
-                    <option value="DT">Gabinete Min. Dias Toffoli</option>
-                    <option value="CZ">Gabinete Min. Cristiano Zanin</option>
+                    <option value="Anexo 2A / 6° andar / Gabinete Ministra Cármen Lúcia">Gabinete Min. Cármem Lúcia</option>
+                    <option value="Anexo 2A / 6° andar / Gabinete Ministro Gilmar Mendes">Gabinete Min. Gilmar Mendes</option>
                     <option value="Anexo 2A / 5° andar / Gabinete Ministro André Mendonça">Gabinete Min. André Mendonça</option>
+                    <option value="Anexo 2A / 4° andar / Gabinete Ministro Dias Toffoli">Gabinete Min. Dias Toffoli</option>
+                    <option value="Anexo 2A / 4° andar / Gabinete Ministro Nunes Marques">Gabinete Min. Dias Toffoli</option>
+                    <option value="Anexo 2A / 4° andar / Gabinete Ministro Cristiano Zanin">Gabinete Min. Cristiano Zanin</option>
+                    <option value="Anexo 2A / 3° andar / Gabinete Ministro Luiz Fux">Gabinete Min. Luiz Fux</option>
+                    <option value="Anexo 2A / 3° andar / Gabinete Ministro Edson Fachin">Gabinete Min. Edson Fachin</option>
+                    <option value="Anexo 2A / 3° andar / Gabinete Ministro Alexandre de Moraes">Gabinete Min. Alexandre de Moraes</option>
                 </select>
             </div>
         </div>

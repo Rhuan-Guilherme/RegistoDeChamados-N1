@@ -1,8 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router' 
 import { onMounted } from 'vue'
-import TheForm from '@/components/layout/TheForm.vue';
-import AreaCards from '@/components/layout/AreaCards.vue'
 import { initFlowbite } from 'flowbite'
 import TheHeader from '@/components/layout/TheNavbar.vue'
 import TheFooter from './components/layout/TheFooter.vue'

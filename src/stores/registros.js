@@ -16,9 +16,7 @@ export const useRegistrosStore = defineStore('registros', () => {
             local: localRegistrado,
             checkTipo: checkTipo,
             selected: selected
-        })
-
-           
+        })  
     }
 
     return {register, addChamado}

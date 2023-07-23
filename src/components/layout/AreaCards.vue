@@ -1,14 +1,17 @@
 <script setup>
-import { ref } from 'vue'
 import { useRegistrosStore } from '@/stores/registros'
 const chamados = useRegistrosStore()
 
 </script>
 
 <template>
+    
     <div v-if="chamados.register.length > 0" class="w-full h-auto p-4 rounded-md bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-wrap items-center justify-center gap-4">
-        <div v-for="(chamado, index) in chamados.register" :key="index" class="relative ativo w-full max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4 dark:bg-gray-800 dark:border-gray-700">
-            <div class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold dark:text-white dark:border-gray-300 border-gray-500 text-black border rounded-md top-1 right-2 ">{{ index + 1 }}</div>
+        
+        <div :class="{'concluido': chamado.concluido}" v-for="(chamado, index) in chamados.register" :key="index" class="relative ativo w-full max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4 dark:bg-gray-800 dark:border-gray-700">
+            <button @click="chamados.removerChamado(index)" v-if="chamado.concluido" class="absolute inline-flex items-center justify-center w-6 h-6 font-bold text-white hover:bg-red-500 bg-green-500 border-2 border-white rounded-md -top-2 -right-2 dark:border-gray-900"><span class="material-symbols-outlined">done</span></button>
+            <button v-if="!chamado.concluido" @click="chamados.marcarConcluido(index)" class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold hover:bg-green-500 dark:text-white dark:border-gray-300 border-gray-500 text-black border rounded-md top-1 right-2 "><span class="material-symbols-outlined text-sm">done</span></button>
+            <button v-if="!chamado.concluido" @click="chamados.removerChamado(index)" class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold hover:bg-red-700 dark:text-white dark:border-gray-300 border-gray-500 text-black border rounded-md top-1 right-9 "><span class="material-symbols-outlined text-sm">delete</span></button>
             <div class="flex items-center justify-center gap-3 text-lg font-semibold">
                 <img v-if="chamado.checkTipo == 'requisicao'" src="@/assets/img/requisicaoIcon.png" alt=""> 
                 <img v-if="chamado.checkTipo == 'incidente'" src="@/assets/img/incidenteIcon.png" alt="">
@@ -18,29 +21,26 @@ const chamados = useRegistrosStore()
             <div class="w-full h-[1px] bg-slate-400"></div>
 
             <div class="flex flex-col gap-2 mt-3">
-                <p v-if="chamado.checkTipo == 'requisicao'">Sr(a). {{ chamado.nome }} entrou em contato solicitando {{ chamado.informacao }}</p>
+                
+                <p v-if="chamado.checkTipo === 'requisicao'">Sr(a). {{ chamado.nome }} entrou em contato solicitando {{ chamado.informacao }}</p>
                 <p v-else>Sr(a). {{ chamado.nome }} entrou em contato informando {{ chamado.informacao }}</p>
                 <p>Nome: {{ chamado.nome }}</p>
                 <p>Login: {{ chamado.login }}</p>
                 <p>Ramal: {{ chamado.ramal }}</p>
-                <p v-if="chamado.local != ' ' ">Local: {{ chamado.local }}</p>
-                <p v-else>Local: {{ chamado.selected }}</p>
+                <p>Local: {{ chamado.local !== ' ' ? chamado.local : chamado.selected }}</p>
                 <p>Patrimônio: {{ chamado.patrimonio }}</p>
             </div>
             
+            <div v-if="!chamado.concluido" class="w-full h-[1px] bg-slate-400 mt-4"></div>
 
-            <!-- <div class="w-full h-[1px] bg-slate-400  mt-3"></div> -->
-
-            <!-- <div class="flex mt-3">
-                <button @click="ativaConcluido()" type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Concluido</button>
-                <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Excluir</button>
-            </div> -->
+            <button v-if="!chamado.concluido" @click="chamados.copiarConteudo(chamado)" class="mt-3 w-full py-1 rounded-md font-semibold bg-blue-700 hover:bg-blue-800">COPIAR</button>
+           
         </div>
     </div>
 </template>
 
 <style scoped>
-    .active{
+    .concluido{
         border: 1px solid #3da730;
         opacity: 0.6;
     }

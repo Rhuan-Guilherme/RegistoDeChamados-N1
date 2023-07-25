@@ -9,13 +9,13 @@ const chamados = useRegistrosStore()
     <div v-if="chamados.register.length > 0" class="w-full h-auto p-4 rounded-md bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-wrap items-center justify-center gap-4">
         
         <div :class="{'concluido': chamado.concluido}" v-for="(chamado, index) in chamados.register" :key="index" class="relative ativo w-full max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4 dark:bg-gray-800 dark:border-gray-700">
-            <button @click="chamados.removerChamado(index)" v-if="chamado.concluido" class="absolute inline-flex items-center justify-center w-6 h-6 font-bold text-white hover:bg-red-500 bg-green-500 border-2 border-white rounded-md -top-2 -right-2 dark:border-gray-900"><span class="material-symbols-outlined">done</span></button>
+            <button @click="chamado.concluido = false" v-if="chamado.concluido" class="absolute inline-flex items-center justify-center w-6 h-6 font-bold text-white hover:bg-red-500 bg-green-500 border-2 border-white rounded-md -top-2 -right-2 dark:border-gray-900"><span class="material-symbols-outlined">done</span></button>
             <button v-if="!chamado.concluido" @click="chamados.marcarConcluido(index)" class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold hover:bg-green-500 dark:text-white dark:border-gray-300 border-gray-500 text-black border rounded-md top-1 right-2 "><span class="material-symbols-outlined text-sm">done</span></button>
             <button v-if="!chamado.concluido" @click="chamados.removerChamado(index)" class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold hover:bg-red-700 dark:text-white dark:border-gray-300 border-gray-500 text-black border rounded-md top-1 right-9 "><span class="material-symbols-outlined text-sm">delete</span></button>
             <div class="flex items-center justify-center gap-3 text-lg font-semibold">
                 <img v-if="chamado.checkTipo == 'requisicao'" src="@/assets/img/requisicaoIcon.png" alt=""> 
                 <img v-if="chamado.checkTipo == 'incidente'" src="@/assets/img/incidenteIcon.png" alt="">
-                <p>{{ chamado.nome }} - {{ chamado.ramal }}</p>
+                <p class="mt-3">{{ chamado.nome }} - {{ chamado.ramal }}</p>
             </div>
 
             <div class="w-full h-[1px] bg-slate-400"></div>

@@ -23,7 +23,7 @@ const chamados = useRegistrosStore()
                 <div class="flex flex-col gap-2 mt-3">
         
                     <p v-if="chamado.checkTipo === 'requisicao'">Sr(a). {{ chamado.nome }} entrou em contato solicitando {{ chamado.informacao }}</p>
-                    <p v-else>Sr(a). {{ chamado.nome }} entrou em contato informando {{ chamado.informacao }}</p>
+                    <p v-else>Prezado(a) Sr(a). {{ chamado.nome }} entrou em contato informando {{ chamado.informacao }}</p>
                     <p>Nome: {{ chamado.nome }}</p>
                     <p>Login: {{ chamado.login }}</p>
                     <p>Ramal: {{ chamado.ramal }}</p>

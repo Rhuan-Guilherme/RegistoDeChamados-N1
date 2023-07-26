@@ -1,5 +1,5 @@
 <script setup>
-import ButtonDelete from '@/components/layout/ButtonDelete.vue'
+
 import { useRegistrosStore } from '@/stores/registros'
 const chamados = useRegistrosStore()
 
@@ -8,10 +8,7 @@ const chamados = useRegistrosStore()
 <template>
     
     <div v-if="chamados.register.length > 0" class="relative">
-        <div class="flex justify-end absolute right-0 -top-12">
-            <ButtonDelete />
-        </div>
-        <div  class="w-full h-auto p-4 rounded-l-md bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-wrap items-center justify-center gap-4">
+        <div  class="w-full h-auto p-4 rounded-md bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-wrap items-center justify-center gap-4">
         
             <div :class="{'concluido': chamado.concluido}" v-for="(chamado, index) in chamados.register" :key="index" class="relative ativo w-full max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4 dark:bg-gray-800 dark:border-gray-700">
                 <button @click="chamado.concluido = false" v-if="chamado.concluido" class="absolute inline-flex items-center justify-center w-6 h-6 font-bold text-white hover:bg-red-500 bg-green-500 border-2 border-white rounded-md -top-2 -right-2 dark:border-gray-900"><span class="material-symbols-outlined">done</span></button>

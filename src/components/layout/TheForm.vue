@@ -146,12 +146,14 @@ const reset = () => {
         </div>
 
         <div class="flex gap-2">
-            <div>
+            <div class="flex gap-1">
                 <button
                     @click="chamados.addChamado(nome, login, ramal, patrimonio, informacao, local, checkTipo, selected), reset()"
                     type="submit"
                     class="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm w-full sm:w-auto  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "><input
-                        class="px-9 py-2.5 cursor-pointer" type="reset" value="Registrar"></button>
+                        class="px-9 py-2.5 cursor-pointer" type="reset" value="Registrar">
+                    </button>
+                    <botaoDelete/>
             </div>
     </div>
 </form>

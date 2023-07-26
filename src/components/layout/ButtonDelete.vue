@@ -4,9 +4,9 @@ const chamados = useRegistrosStore()
 </script>
 
 <template>
-      <div>
+      <div class="">
                 <button data-modal-target="defaultModal" data-modal-toggle="defaultModal"
-                    class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                    class="block bg-slate-300 dark:bg-gray-800 dark:text-white font-medium rounded-t-lg text-sm px-5 py-2.5 text-center  hover:bg-red-600 dark:hover:bg-red-600 hover:text-white"
                     type="button">
                     <span class="material-symbols-outlined text-md ">delete</span>
                 </button>

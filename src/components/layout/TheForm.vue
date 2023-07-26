@@ -105,7 +105,7 @@ const reset = () => {
                     <option value="Anexo 2A / 5° andar / Gabinete Ministro André Mendonça">Gabinete Min. André Mendonça
                     </option>
                     <option value="Anexo 2A / 4° andar / Gabinete Ministro Dias Toffoli">Gabinete Min. Dias Toffoli</option>
-                    <option value="Anexo 2A / 4° andar / Gabinete Ministro Nunes Marques">Gabinete Min. Nunes Marques
+                    <option value="Anexo 2A / 5° andar / Gabinete Ministro Nunes Marques">Gabinete Min. Nunes Marques
                     </option>
                     <option value="Anexo 2A / 4° andar / Gabinete Ministro Cristiano Zanin">Gabinete Min. Cristiano Zanin
                     </option>

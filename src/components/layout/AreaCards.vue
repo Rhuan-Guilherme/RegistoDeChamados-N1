@@ -43,7 +43,7 @@ function doneModal() {
 <template>
   <div v-if="chamados.register.length > 0" class="relative">
     <div
-      class="w-full h-auto p-4 rounded-md bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-wrap items-center justify-center gap-4"
+      class="w-full h-auto p-4 rounded-md bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-row-reverse flex-wrap-reverse items-center justify-center gap-4"
     >
       <div
         :class="{ concluido: chamado.concluido }"

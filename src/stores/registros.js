@@ -68,5 +68,16 @@ export const useRegistrosStore = defineStore('registros', () => {
       })
   }
 
-  return { register, addChamado, limparChamados, removerChamado, marcarConcluido, copiarConteudo  }
+  function editarChamado(index, dadosAtualizados) {
+    if (index >= 0 && index < register.value.length) {
+      // Atualiza o objeto chamado com os dados atualizados
+      const chamado = register.value[index]
+      Object.assign(chamado, dadosAtualizados)
+
+      // Salva as alterações no localStorage
+      localStorage.setItem(localStorageKey, JSON.stringify(register.value))
+    }
+  }
+
+  return { register, addChamado, limparChamados, removerChamado, marcarConcluido, copiarConteudo, editarChamado  }
 })

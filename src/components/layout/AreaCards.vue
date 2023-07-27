@@ -203,6 +203,9 @@ function doneModal() {
             </div>
 
             <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Local pre definido</label
+              >
               <select
                 id="countries"
                 v-model="editedChamado.local"

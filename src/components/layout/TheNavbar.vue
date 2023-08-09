@@ -20,7 +20,6 @@ const toggleDark = useToggle(isDark)
                 <div class="flex gap-2">
                     <RouterLink to="/chamados"
                         class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700">Chamados
-                        <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-sm ">{{ chamados.register.length }}</span>
                     </RouterLink>
                     <button @click="toggleDark()" type="button"
                         class="hidden md:flex justify-center items-center text-white bg-blue-700 hover:bg-blue-800  focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

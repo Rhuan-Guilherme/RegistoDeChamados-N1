@@ -4,7 +4,7 @@ import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 import TheHeader from '@/components/layout/TheNavbar.vue'
 import TheFooter from './components/layout/TheFooter.vue'
-
+import NotificationBadge from './components/layout/NotificationBadge.vue'
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();
@@ -12,9 +12,11 @@ onMounted(() => {
 </script>
 
 <template>
+  
   <TheHeader />
   <main class="conteudo_main bg-slate-200 dark:bg-gray-950 pt-[73px]">
     <RouterView></RouterView>
+    
   </main>
   <footer class="bg-slate-200 dark:bg-gray-950 p-1">
     <TheFooter />

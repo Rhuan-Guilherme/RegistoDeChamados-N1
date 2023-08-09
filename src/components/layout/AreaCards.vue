@@ -1,6 +1,6 @@
 <script setup>
 import { useRegistrosStore } from '@/stores/registros'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 let modal = ref(false)
 const chamados = useRegistrosStore()
 const showEditor = ref(false)
@@ -43,11 +43,16 @@ function doneModal() {
 <template>
   <div v-if="chamados.register.length > 0" class="relative">
     <div
-      class="w-full h-auto p-4 rounded-md bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-row-reverse flex-wrap-reverse items-center justify-center gap-4"
+      class="w-full h-auto p-4  bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-row-reverse flex-wrap-reverse items-center justify-center gap-4"
     >
+   
+      <div class="absolute inline-flex items-center justify-center w-auto h-6 px-2 font-bold text-gray-500 dark:text-gray-400 bg-blue rounded-t -top-6 -right-0 bg-slate-300 dark:bg-gray-900">
+         <span class="animate-pulse">{{ chamados.register.length }}</span>
+      </div>
+  
       <div
         :class="{ concluido: chamado.concluido }"
-        v-for="(chamado, index) in chamados.register"
+        v-for="(chamado, index) in chamados.register.slice(-10)"
         :key="index"
         class="relative ativo w-full max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-4 dark:bg-gray-800 dark:border-gray-700"
       >
@@ -113,7 +118,7 @@ function doneModal() {
         <button
           v-if="!chamado.concluido"
           @click="chamados.copiarConteudo(chamado)"
-          class="mt-3 w-full py-1 rounded-md font-semibold bg-blue-700 hover:bg-blue-800"
+          class="mt-3 w-full py-1 rounded-md font-semibold bg-blue-700 hover:bg-blue-800 text-slate-50"
         >
           COPIAR
         </button>

@@ -77,7 +77,7 @@ export const useRegistrosStore = defineStore('registros', () => {
       // Salva as alterações no localStorage
       localStorage.setItem(localStorageKey, JSON.stringify(register.value))
     }
-  }
+  }  
 
   return { register, addChamado, limparChamados, removerChamado, marcarConcluido, copiarConteudo, editarChamado  }
 })

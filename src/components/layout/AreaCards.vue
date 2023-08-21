@@ -46,9 +46,6 @@ function doneModal() {
       class="w-full h-auto p-4  bg-slate-300 dark:bg-gray-900 dark:text-white flex flex-row-reverse flex-wrap-reverse items-center justify-center gap-4"
     >
    
-      <div class="absolute inline-flex items-center justify-center w-auto h-6 px-2 font-bold text-gray-500 dark:text-gray-400 bg-blue rounded-t -top-6 -right-0 bg-slate-300 dark:bg-gray-900">
-         <span class="animate-pulse">{{ chamados.register.length }}</span>
-      </div>
   
       <div
         :class="{ concluido: chamado.concluido }"

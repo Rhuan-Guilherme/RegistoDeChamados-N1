@@ -57,7 +57,7 @@ export const useRegistrosStore = defineStore('registros', () => {
   }
 
   function copiarConteudo(chamado) {
-    const texto = `Prezados, o(a) Sr(a). ${ chamado.nome } entrou em contato ${ chamado.informacao }\n Nome: ${chamado.nome}\nLogin: ${chamado.login}\nRamal: ${chamado.ramal}\nLocal: ${chamado.local !== ' ' ? chamado.local : chamado.selected}\nPatrimônio: ${chamado.patrimonio}`
+    const texto = `Prezados, Sr(a). ${ chamado.nome } entrou em contato ${ chamado.informacao }\n\n Nome: ${chamado.nome}\n\nLogin: ${chamado.login}\n\nRamal: ${chamado.ramal}\n\nLocal: ${chamado.local !== ' ' ? chamado.local : chamado.selected}\n\nPatrimônio: ${chamado.patrimonio}`
     navigator.clipboard.writeText(texto)
       .then(() => {
         alert('Conteúdo copiado para a área de transferência.')

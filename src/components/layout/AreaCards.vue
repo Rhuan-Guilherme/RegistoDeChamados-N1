@@ -101,7 +101,7 @@ function doneModal() {
             {{ chamado.informacao }}
           </p>
           <p v-else>
-            Prezado(a) Sr(a). {{ chamado.nome }} entrou em contato informando
+            Prezados, Sr(a). {{ chamado.nome }} entrou em contato informando
             {{ chamado.informacao }}
           </p>
           <p>Nome: {{ chamado.nome }}</p>
